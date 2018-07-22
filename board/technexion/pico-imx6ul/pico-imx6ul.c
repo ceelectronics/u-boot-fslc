@@ -12,6 +12,7 @@
 #include <asm/arch/mx6-pins.h>
 #include <asm/arch/sys_proto.h>
 #include <asm/gpio.h>
+#include <asm/mach-imx/boot_mode.h>
 #include <asm/mach-imx/iomux-v3.h>
 #include <asm/mach-imx/mxc_i2c.h>
 #include <asm/io.h>
@@ -281,6 +282,22 @@ int board_init(void)
 	setup_fec();
 	setup_usb();
 
+	return 0;
+}
+
+#ifdef CONFIG_CMD_BMODE
+static const struct boot_mode board_boot_modes[] = {
+	/* 8 bit bus width */
+	{"emmc", MAKE_CFGVAL(0x60, 0x40, 0x00, 0x00)},
+	{NULL, 0},
+};
+#endif
+
+int board_late_init(void)
+{
+#ifdef CONFIG_CMD_BMODE
+	add_board_boot_modes(board_boot_modes);
+#endif
 	return 0;
 }
 
