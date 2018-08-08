@@ -1,6 +1,6 @@
-MX6SABRESD BOARD
-M:	Fabio Estevam <fabio.estevam@nxp.com>
+C.E. Electronics, Inc Elite IV
+M:	Dan Riegsecker <dan@ceelectronics.com>
 S:	Maintained
-F:	board/freescale/mx6sabresd/
-F:	include/configs/mx6sabresd.h
-F:	configs/mx6sabresd_defconfig
+F:	board/ceelectronics/eliteiv/
+F:	include/configs/elitiev.h
+F:	configs/eliteiv_defconfig

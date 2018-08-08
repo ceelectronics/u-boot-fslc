@@ -165,7 +165,7 @@ config TARGET_DISPLAY5
 	select DM_SERIAL
 
 config TARGET_ELITEIV
-	bool "eliteiv"
+	bool "C.E. Electronics, Inc. Elite IV"
 	select MX6QDL
 	select BOARD_LATE_INIT
 	select SUPPORT_SPL
